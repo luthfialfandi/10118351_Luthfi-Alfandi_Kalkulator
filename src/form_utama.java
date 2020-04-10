@@ -495,6 +495,7 @@ public class form_utama extends javax.swing.JFrame {
     private void btnclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnclearActionPerformed
         // TODO add your handling code here:
         txthasil.setText("0");
+        lbl_bilangan.setText("");
     }//GEN-LAST:event_btnclearActionPerformed
 
     private void btntambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntambahActionPerformed

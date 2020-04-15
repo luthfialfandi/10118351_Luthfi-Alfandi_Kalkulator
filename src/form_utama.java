@@ -518,11 +518,15 @@ public class form_utama extends javax.swing.JFrame {
         // TODO add your handling code here:
         DecimalFormat df = new DecimalFormat("0", DecimalFormatSymbols.getInstance(Locale.ENGLISH));
         df.setMaximumFractionDigits(340);
-        
-        bilangan = Double.parseDouble(txthasil.getText());
-        opsi_perhitungan = 2;
-        txthasil.setText("");
-        lbl_bilangan.setText(df.format(bilangan) + "-");
+        if (txthasil.getText().equals("0")) {
+            txthasil.setText("-");
+        }
+        else {
+            bilangan = Double.parseDouble(txthasil.getText());
+            opsi_perhitungan = 2;
+            txthasil.setText("");
+            lbl_bilangan.setText(df.format(bilangan) + "-");
+        }
     }//GEN-LAST:event_btnkurangActionPerformed
 
     private void btnkaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnkaliActionPerformed

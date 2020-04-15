@@ -1,4 +1,7 @@
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 
@@ -25,25 +28,28 @@ public class form_utama extends javax.swing.JFrame {
     }
     
     public void operasi_aritmatika() {
+        DecimalFormat df = new DecimalFormat("0", DecimalFormatSymbols.getInstance(Locale.ENGLISH));
+        df.setMaximumFractionDigits(340);
+        
         switch(opsi_perhitungan) {
             case 1 : //tambah
                 jumlah = bilangan + Double.parseDouble(txthasil.getText());
-                txthasil.setText(Double.toString(jumlah));
+                txthasil.setText(df.format(jumlah));
                 break;
                 
             case 2 : //kurang
                 jumlah = bilangan - Double.parseDouble(txthasil.getText());
-                txthasil.setText(Double.toString(jumlah));
+                txthasil.setText(df.format(jumlah));
                 break;
                 
             case 3 : //kali
                 jumlah = bilangan * Double.parseDouble(txthasil.getText());
-                txthasil.setText(Double.toString(jumlah));
+                txthasil.setText(df.format(jumlah));
                 break;
                 
             case 4 : //bagi
                 jumlah = bilangan / Double.parseDouble(txthasil.getText());
-                txthasil.setText(Double.toString(jumlah));
+                txthasil.setText(df.format(jumlah));
                 break;
         }
     }
@@ -499,34 +505,46 @@ public class form_utama extends javax.swing.JFrame {
 
     private void btntambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntambahActionPerformed
         // TODO add your handling code here:
+        DecimalFormat df = new DecimalFormat("0", DecimalFormatSymbols.getInstance(Locale.ENGLISH));
+        df.setMaximumFractionDigits(340);
+        
         bilangan = Double.parseDouble(txthasil.getText());
         opsi_perhitungan = 1;
         txthasil.setText("");
-        lbl_bilangan.setText(bilangan + "+");
+        lbl_bilangan.setText(df.format(bilangan) + "+");
     }//GEN-LAST:event_btntambahActionPerformed
 
     private void btnkurangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnkurangActionPerformed
         // TODO add your handling code here:
+        DecimalFormat df = new DecimalFormat("0", DecimalFormatSymbols.getInstance(Locale.ENGLISH));
+        df.setMaximumFractionDigits(340);
+        
         bilangan = Double.parseDouble(txthasil.getText());
         opsi_perhitungan = 2;
         txthasil.setText("");
-        lbl_bilangan.setText(bilangan + "-");
+        lbl_bilangan.setText(df.format(bilangan) + "-");
     }//GEN-LAST:event_btnkurangActionPerformed
 
     private void btnkaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnkaliActionPerformed
         // TODO add your handling code here:
+        DecimalFormat df = new DecimalFormat("0", DecimalFormatSymbols.getInstance(Locale.ENGLISH));
+        df.setMaximumFractionDigits(340);
+        
         bilangan = Double.parseDouble(txthasil.getText());
         opsi_perhitungan = 3;
         txthasil.setText("");
-        lbl_bilangan.setText(bilangan + "*");
+        lbl_bilangan.setText(df.format(bilangan) + "*");
     }//GEN-LAST:event_btnkaliActionPerformed
 
     private void btnbagiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbagiActionPerformed
         // TODO add your handling code here:
+        DecimalFormat df = new DecimalFormat("0", DecimalFormatSymbols.getInstance(Locale.ENGLISH));
+        df.setMaximumFractionDigits(340);
+        
         bilangan = Double.parseDouble(txthasil.getText());
         opsi_perhitungan = 4;
         txthasil.setText("");
-        lbl_bilangan.setText(bilangan + "/");
+        lbl_bilangan.setText(df.format(bilangan) + "/");
     }//GEN-LAST:event_btnbagiActionPerformed
 
     private void btnsamadenganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsamadenganActionPerformed

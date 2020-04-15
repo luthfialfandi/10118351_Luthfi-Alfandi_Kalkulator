@@ -37,7 +37,7 @@ public class form_utama extends javax.swing.JFrame {
                 txthasil.setText(df.format(jumlah));
                 break;
                 
-            case 2 : //kurang
+            case 2 : //kurang 
                 jumlah = bilangan - Double.parseDouble(txthasil.getText());
                 txthasil.setText(df.format(jumlah));
                 break;
